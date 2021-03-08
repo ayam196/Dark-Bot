@@ -38,7 +38,7 @@ const tiktod = require('tiktok-scraper')
 const speed = require('performance-now')
 const brainly = require('brainly-scraper')
 const ffmpeg = require('fluent-ffmpeg')
-const cd = 4.32e+
+const cd = 4.32e+7
 const { removeBackgroundFromImageFile } = require('remove.bg')
 const { nad } = require('./language')
 const vcard = 'BEGIN:VCARD\n'
@@ -819,14 +819,14 @@ switch(command) {
 					})
 					await limitAdd(sender)
 					break
-							case 'ttp': //By NOIR X RAMLAN ID
+							case 'ttp': //By NOIR X ALIA ID
 							pngttp = './temp/ttp.png'
 							webpng = './temp/ttp.webp'
 							const ttptext = body.slice(5)
 							fetch(`https://api.areltiyan.site/sticker_maker?text=${ttptext}`, { method: 'GET'})
 							.then(async res => {
 							const ttptxt = await res.json()
-							console.log("RAMLANID")
+							console.log("ALIAID")
 							base64Img.img(ttptxt.base64, 'temp', 'ttp', function(err, filepath) {
 							if (err) return console.log(err);
 							exec(`ffmpeg -i ${pngttp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${webpng}`, (err) => {
@@ -899,6 +899,9 @@ switch(command) {
                     await limitAdd(sender)
 			       break
 				case 'daftar':
+				case 'verify':
+				case "register':
+				case 'reg':
 				if (isBanned) return reply(nad.baned())
                 if (isRegistered) return  reply(nad.rediregis())
                 if (!q.includes('|')) return  reply(nad.wrongf())
@@ -945,7 +948,7 @@ switch(command) {
                  randIndex = Math.floor(Math.random() * jsonData.length);
                  randKey = jsonData[randIndex];
                  randBokep = await getBuffer(randKey.image)
-                 reply('JANGAN COMLY MULU BRO')
+                 reply('JANGAN BOKEP MULU BRO')
                  randTeks = randKey.teks
                  baby.sendMessage(from, randBokep, image, {quoted: mek, caption: randTeks})
 				break
@@ -1204,6 +1207,8 @@ switch(command) {
 	                .then(() => {baby.sendMessage(from, options, text)})	                	                
 					break
                 case 'randomhentong':
+                case 'hentai':
+                case 'randomhentai':
                   if (isBanned) return reply(nad.baned())
 				if (!isRegistered) return reply(nad.noregis())
 				if (!isPrem) return reply(nad.premium())
@@ -1672,6 +1677,7 @@ case 'neontext':
 					}
 					break
 				case 'hedsot':
+				case 'headshot':
                 if (!isRegistered) return reply(nad.noregis())				
 					if (!isGroup) return reply(nad.groupo())
 					if (!isGroupAdmins) return reply(nad.admin())
@@ -1725,6 +1731,7 @@ case 'neontext':
 ]=====> DOWNLOAD MENU <=====[
 */
 case 'play':
+case 'joox':
      if (isBanned) return reply(nad.baned())
 	 if (!isRegistered) return reply(nad.noregis())
 if (!isPrem) return reply(nad.premium())
@@ -2039,7 +2046,7 @@ break
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						buff = await baby.downloadMediaMessage(encmedia)
 						for (let _ of anu) {
-							baby.sendMessage(_.jid, buff, image, {caption: `*「 BABY BROADCAST 」*\n\n${body.slice(4)}`})
+							baby.sendMessage(_.jid, buff, image, {caption: `*「 BOT BROADCAST 」*\n\n${body.slice(4)}`})
 						}
 						reply('')
 					} else {
@@ -2058,7 +2065,7 @@ break
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						buff = await baby.downloadMediaMessage(encmedia)
 						for (let _ of anu) {
-							baby.sendMessage(_.jid, buff, image, {caption: `*「 BC GROUP 」*\n\n➸ Dari Grup : ${groupName}\n➸ Pengirim : wa.me/${(sender.split('@')[0])}\n➸ Pesan : ${body.slice(6)}`})
+							baby.sendMessage(_.jid, buff, image, {caption: `*「 BROADCAST GROUP 」*\n\n➸ Dari Grup : ${groupName}\n➸ Pengirim : wa.me/${(sender.split('@')[0])}\n➸ Pesan : ${body.slice(6)}`})
 						}
 						reply('*「 SUKSES BOSKU 」*')
 					} else {

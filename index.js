@@ -38,7 +38,7 @@ const tiktod = require('tiktok-scraper')
 const speed = require('performance-now')
 const brainly = require('brainly-scraper')
 const ffmpeg = require('fluent-ffmpeg')
-const cd = 4.32e+
+const cd = 4.32e+7
 const { removeBackgroundFromImageFile } = require('remove.bg')
 const { nad } = require('./language')
 const vcard = 'BEGIN:VCARD\n'
@@ -753,13 +753,6 @@ switch(command) {
 				alan = await getBuffer(`https://vinz.zeks.xyz/api/pornhub?text1=${porn}&text2=${hub}`)
 				baby.sendMessage(from, alan, image, {quoted: mek})
 				await limitAdd(sender)
-				break
-				case 'harrypotter':
-				gol = body.slice (12)
-				if (arga.length <1) return reply('teks nya mana cok')
-				return (mess.wait)
-				buffernrb = await getBuffer('https://videfikri.com/api/textmaker/hpotter/?text=${gol}', {method: 'get'}}
-				baby.sendMessages(from, buffernrb, images, {quoted: mek, caption: 'Nih Kak'})
 				break
 		case 'textlight':
                   if (isBanned) return reply(nad.baned())
