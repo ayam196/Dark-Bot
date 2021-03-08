@@ -754,13 +754,6 @@ switch(command) {
 				baby.sendMessage(from, alan, image, {quoted: mek})
 				await limitAdd(sender)
 				break
-				case 'harrypotter':
-				gol = body.slice (12)
-				if (arga.length <1) return reply('teks nya mana cok')
-				return (mess.wait)
-				buffernrb = await getBuffer('https://videfikri.com/api/textmaker/hpotter/?text=${gol}', {method: 'get'}}
-				baby.sendMessages(from, buffernrb, images, {quoted: mek, caption: 'Nih Kak'})
-				break
 		case 'textlight':
                   if (isBanned) return reply(nad.baned())
 				if (!isRegistered) return reply(nad.noregis())

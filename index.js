@@ -893,7 +893,7 @@ switch(command) {
 			       break
 				case 'daftar':
 				case 'verify':
-				case "register':
+			    case 'register':
 				case 'reg':
 				if (isBanned) return reply(nad.baned())
                 if (isRegistered) return  reply(nad.rediregis())
